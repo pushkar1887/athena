@@ -157,7 +157,7 @@ Ties prefer fewer unsupported edits and then higher TRM confidence. Athena submi
 - A CUDA-capable GPU; the paper's full experiments used four NVIDIA A100 80 GB GPUs
 - Access to the Qwen3-VL-8B-Instruct model for TEM inference
 
-Clone the repository and install the Python dependencies:
+install the Python dependencies:
 
 ```bash
 
