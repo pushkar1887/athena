@@ -2,7 +2,7 @@
 
 For a real task: build the cell-colour recolour map from the SUPPORT demos of the SAME task ONLY,
 apply it to the HELD-OUT demo's INPUT, compare to the held-out OUTPUT. This is the exact computation
-check_extraction does -- emitted as JSON (grids as colour-int arrays + the coverage tally) so a viewer
+the oracle evaluator performs -- emitted as JSON (grids as colour-int arrays + the coverage tally) so a viewer
 can confirm it is intra-task (the other demos of the SAME task solve the held-out one).
 
 Run:  trm\\Scripts\\python.exe scripts\\viz_lodo_task.py

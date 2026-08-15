@@ -23,7 +23,7 @@ Self-validation: run on TWO extractors; the check MUST tell them apart --
     (a dominant NOISE colour hides dst from the output marginal), so the pooler cannot recover it.
   If the check can't separate these, the check is broken.
 
-Run:  trm\\Scripts\\python.exe scripts\\check_extraction.py
+Run:  trm\\Scripts\\python.exe scripts\\solve.py
 """
 from __future__ import annotations
 

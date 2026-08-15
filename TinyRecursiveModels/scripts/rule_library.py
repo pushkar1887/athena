@@ -5,12 +5,12 @@ program that reconstructs a task's demos EXACTLY (LODO-verified), we FACTOR IT O
 composite primitive (a "macro"). Future tasks try the stored macros as 1-step candidates BEFORE re-searching
 the full composition space -- so each solved task makes later tasks cheaper/reachable (DreamCoder-style
 abstraction). The library's OTHER half is the core-knowledge base primitives (recolor, geometric, neighbour,
-object ops); those live in check_extraction.py. This module is JUST the store: it holds RECIPES (ordered op
+object ops); those live in the parse, solve, and oracle-evaluation modules. This module is JUST the store: it holds RECIPES (ordered op
 names), not fitted parameters -- the parameters are always re-fit cross-demo on the new task (the cross-demo
 pillar). Persists to JSON so it carries across runs (train OR inference time).
 
 Self-contained + self-tested (build-the-check-before-the-feature). The executor that runs a recipe is supplied
-by the caller (check_extraction) so this module has no heavy deps.
+by the caller so this module has no heavy deps.
 """
 from __future__ import annotations
 

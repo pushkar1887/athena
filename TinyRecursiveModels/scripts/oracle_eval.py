@@ -23,7 +23,7 @@ Self-validation: run on TWO extractors; the check MUST tell them apart --
     (a dominant NOISE colour hides dst from the output marginal), so the pooler cannot recover it.
   If the check can't separate these, the check is broken.
 
-Run:  trm\\Scripts\\python.exe scripts\\check_extraction.py
+Run:  trm\\Scripts\\python.exe scripts\\oracle_eval.py
 """
 from __future__ import annotations
 
@@ -1522,7 +1522,7 @@ def main():
     print(f"[BAD ] {ShuffleInvariantPooler.name}\n        {_fmt(bad)}")
     assert good["verdict"], "CHECK BROKEN: a task-specific extractor must PASS"
     assert not bad["verdict"], "CHECK BROKEN: a pairing-invariant extractor must FAIL"
-    print("\ncheck_extraction self-validation PASS "
+    print("\noracle_eval self-validation PASS "
           "(separates task-specific from collapsed extractors).")
     print()
     _demo_object_conditioned()
