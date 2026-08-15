@@ -160,8 +160,6 @@ Ties prefer fewer unsupported edits and then higher TRM confidence. Athena submi
 Clone the repository and install the Python dependencies:
 
 ```bash
-git clone https://github.com/pushkar1887/trm_c2.git
-cd trm_c2/TinyRecursiveModels
 
 python -m venv .venv
 source .venv/bin/activate
