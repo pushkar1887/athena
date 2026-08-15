@@ -86,7 +86,7 @@ Instance-specific identifiers are replaced with grounded relational descriptions
 Malformed events are discarded and exact duplicates are removed within each demonstration:
 
 $$
-E_m=\operatorname{Unique}\{e_{m,1},\ldots,e_{m,N_m}\}.
+E_m=\mathrm{Unique}\{e_{m,1},\ldots,e_{m,N_m}\}.
 $$
 
 ### 4. Cross-Demonstration Verification
@@ -122,13 +122,13 @@ The paper selects $\gamma=0.75$. In this formulation, *verified* means that an e
 Verified events are compiled into structured neural features containing the operation, grounded source and target masks, relational condition, transformation parameters, target value or location, order, and consistency score:
 
 $$
-A_\tau^{\mathrm{nlp}}=\operatorname{Compile}(E_\tau^V;R(X^*)).
+A_\tau^{\mathrm{nlp}}=\mathrm{Compile}(E_\tau^V;R(X^*)).
 $$
 
 These features are fused with query-side visual evidence:
 
 $$
-A_\tau=\operatorname{Fuse}(A_\tau^{\mathrm{vis}},A_\tau^{\mathrm{nlp}}).
+A_\tau=\mathrm{Fuse}(A_\tau^{\mathrm{vis}},A_\tau^{\mathrm{nlp}}).
 $$
 
 TRM acts as Athena's compact neural rule executor:
@@ -143,12 +143,7 @@ Relational, core-prior, and transition evidence condition the recursive state. T
 
 Athena generates $K$ candidates from task-preserving augmented views, maps them back to the canonical frame, and removes duplicates. Each distinct candidate is ranked by consistency-weighted agreement with the verified evidence:
 
-$$
-S_{\mathrm{VE}}(\hat{Y}_k)
-=
-\frac{\sum_{e\in E_\tau^V}c(e)\,\mathbb{I}[\hat{Y}_k\models_{X^*}e]}
-{\sum_{e\in E_\tau^V}c(e)}.
-$$
+$$S_{\mathrm{VE}}(\hat{Y}_k)=\frac{\sum_{e\in E_\tau^V}c(e)\,\mathbb{I}[\hat{Y}_k\models_{X^*}e]}{\sum_{e\in E_\tau^V}c(e)}.$$
 
 Ties prefer fewer unsupported edits and then higher TRM confidence. Athena submits the two highest-ranked distinct candidates under the ARC two-attempt protocol.
 
