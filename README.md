@@ -207,37 +207,7 @@ python -m dataset.build_arc_dataset \
 
 Do not combine ARC-AGI-1 and ARC-AGI-2 into a single uncontrolled train/evaluation pool: ARC-AGI-2 training data overlaps with ARC-AGI-1 evaluation data.
 
-## Training the Neural Rule Executor
 
-The TRM executor is configured through Hydra. A single-process experiment can be launched with:
-
-```bash
-python pretrain.py \
-  --config-name cfg_fvr_experiment \
-  arch=trm_fvr_c2 \
-  data_paths="[data/arc1concept-aug-1000]" \
-  epochs=500 \
-  global_batch_size=32 \
-  lr=1e-4 \
-  weight_decay=0.01
-```
-
-For four-GPU distributed training:
-
-```bash
-torchrun \
-  --nproc-per-node=4 \
-  --rdzv_backend=c10d \
-  --rdzv_endpoint=localhost:0 \
-  pretrain.py \
-  --config-name cfg_fvr_experiment \
-  arch=trm_fvr_c2 \
-  data_paths="[data/arc1concept-aug-1000]" \
-  epochs=500 \
-  global_batch_size=32 \
-  lr=1e-4 \
-  weight_decay=0.01
-```
 
 Hydra overrides should be recorded with the checkpoint and resolved configuration. Checkpoint compatibility depends on the model's evidence schema and puzzle-identifier mapping; do not load a checkpoint against a differently indexed dataset without validating that mapping.
 
