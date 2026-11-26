@@ -32,7 +32,7 @@ Athena separates rule abstraction, transformation verification and neural rule e
 | High-budget baseline | TRM (Voted), K = 1000 |
 | Athena | Matched K = 1; full K = 64 |
 
-The checkout contains training and diagnostic implementations, but does not contain an identifiable standalone TEM launcher, final paper checkpoints, complete paper-run configurations or all experiment ledgers. Commands below distinguish available entry points from steps requiring these additional artifacts. The other baselines in the paper do not have dedicated launchers in this checkout.
+The checkout contains training and diagnostic implementations, but does not contain an identifiable standalone TEM launcher, final paper checkpoints, complete paper-run configurations or all experiment ledgers. Commands below distinguish available entry points from steps requiring these additional artifacts. 
 
 ## 1. Prepare the Environment
 
@@ -147,7 +147,7 @@ The second command generates candidates at the requested budget; reproducing the
 | Visual and language-based reasoning | Visual ARC, V-ARC, LLM4ARC, GPT-4 ARC, Claude ARC |
 | Recursive neural reasoning | HRM, TRM (Matched), TRM (Voted) |
 
-The repository does not provide independent launchers for the symbolic or hosted-model baselines. Reproducing their reported scores requires the corresponding implementations, exact configurations and evaluation records. No provider keys are needed for the local TRM command above.
+
 
 ## 4. Metric Settings
 
